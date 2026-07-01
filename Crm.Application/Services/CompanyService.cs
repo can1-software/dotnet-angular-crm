@@ -13,14 +13,19 @@ public class CompanyService : ICompanyService
         _unitOfWork = unitOfWork;
     }
 
-    public Task<List<CompanyResponse>> GetAllAsync()
+    public async Task<List<CompanyResponse>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var companies = await _unitOfWork.Companies.GetAllAsync();
+        return companies.Select(MapToResponse).ToList();
     }
 
-    public Task<CompanyResponse?> GetByIdAsync(Guid id)
+    public async Task<CompanyResponse?> GetByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        var company = await _unitOfWork.Companies.GetByIdAsync(id);
+        if (company is null)
+            return null;
+
+        return MapToResponse(company);
     }
 
     public async Task<Guid> CreateAsync(CreateCompanyRequest request)
@@ -50,4 +55,15 @@ public class CompanyService : ICompanyService
     {
         throw new NotImplementedException();
     }
+
+    private static CompanyResponse MapToResponse(Company company) => new()
+    {
+        Id = company.Id,
+        Name = company.Name,
+        Email = company.Email,
+        Phone = company.Phone,
+        Industry = company.Industry,
+        IsActive = company.IsActive,
+        CreatedAt = company.CreatedAt
+    };
 }

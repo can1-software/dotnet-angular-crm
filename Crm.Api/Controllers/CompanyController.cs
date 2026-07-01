@@ -15,6 +15,13 @@ public class CompanyController : ControllerBase
         _companyService = companyService;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<List<CompanyResponse>>> GetAll()
+    {
+        var companies = await _companyService.GetAllAsync();
+        return Ok(companies);
+    }
+
     [HttpPost]
     public async Task<ActionResult<Guid>> Create([FromBody] CreateCompanyRequest request)
     {
