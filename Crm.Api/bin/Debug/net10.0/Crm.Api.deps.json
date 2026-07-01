@@ -940,7 +940,8 @@
       },
       "Crm.Application/1.0.0": {
         "dependencies": {
-          "Crm.Domain": "1.0.0"
+          "Crm.Domain": "1.0.0",
+          "FluentValidation": "11.11.0"
         },
         "runtime": {
           "Crm.Application.dll": {
