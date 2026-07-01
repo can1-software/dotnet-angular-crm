@@ -10,4 +10,10 @@ public class CrmDbContext : DbContext
     }
 
     public DbSet<Company> Companies => Set<Company>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(CrmDbContext).Assembly);
+        base.OnModelCreating(modelBuilder);
+    }
 }
