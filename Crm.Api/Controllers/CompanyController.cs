@@ -38,4 +38,35 @@ public class CompanyController : ControllerBase
 
         return Ok(company);
     }
+
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateCompanyRequest request)
+    {
+        if (id != request.Id)
+            return BadRequest();
+
+        try
+        {
+            await _companyService.UpdateAsync(request);
+            return NoContent();
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound();
+        }
+    }
+
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        try
+        {
+            await _companyService.DeleteAsync(id);
+            return NoContent();
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound();
+        }
+    }
 }

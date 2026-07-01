@@ -46,14 +46,31 @@ public class CompanyService : ICompanyService
         return company.Id;
     }
 
-    public Task UpdateAsync(UpdateCompanyRequest request)
+    public async Task UpdateAsync(UpdateCompanyRequest request)
     {
-        throw new NotImplementedException();
+        var company = await _unitOfWork.Companies.GetByIdAsync(request.Id);
+        if (company is null)
+            throw new KeyNotFoundException($"Company with id '{request.Id}' was not found.");
+
+        company.Name = request.Name;
+        company.Email = request.Email;
+        company.Phone = request.Phone;
+        company.Industry = request.Industry;
+        company.IsActive = request.IsActive;
+        company.UpdatedAt = DateTime.UtcNow;
+
+        _unitOfWork.Companies.Update(company);
+        await _unitOfWork.SaveChangesAsync();
     }
 
-    public Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
-        throw new NotImplementedException();
+        var company = await _unitOfWork.Companies.GetByIdAsync(id);
+        if (company is null)
+            throw new KeyNotFoundException($"Company with id '{id}' was not found.");
+
+        _unitOfWork.Companies.Delete(company);
+        await _unitOfWork.SaveChangesAsync();
     }
 
     private static CompanyResponse MapToResponse(Company company) => new()
