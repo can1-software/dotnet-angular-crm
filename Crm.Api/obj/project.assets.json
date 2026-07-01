@@ -1305,6 +1305,57 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "Crm.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Crm.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Crm.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.Application.dll": {}
+        }
+      },
+      "Crm.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Crm.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.Domain.dll": {}
+        }
+      },
+      "Crm.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Crm.Application": "1.0.0",
+          "Crm.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Crm.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.Infrastructure.dll": {}
+        }
+      },
+      "Crm.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Crm.Application": "1.0.0",
+          "Crm.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Crm.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.Persistence.dll": {}
+        }
       }
     }
   },
@@ -3683,11 +3734,34 @@
         "system.security.cryptography.protecteddata.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Crm.Application/1.0.0": {
+      "type": "project",
+      "path": "../Crm.Application/Crm.Application.csproj",
+      "msbuildProject": "../Crm.Application/Crm.Application.csproj"
+    },
+    "Crm.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Crm.Domain/Crm.Domain.csproj",
+      "msbuildProject": "../Crm.Domain/Crm.Domain.csproj"
+    },
+    "Crm.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Crm.Infrastructure/Crm.Infrastructure.csproj",
+      "msbuildProject": "../Crm.Infrastructure/Crm.Infrastructure.csproj"
+    },
+    "Crm.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../Crm.Persistence/Crm.Persistence.csproj",
+      "msbuildProject": "../Crm.Persistence/Crm.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "Crm.Application >= 1.0.0",
+      "Crm.Infrastructure >= 1.0.0",
+      "Crm.Persistence >= 1.0.0",
       "FluentValidation.AspNetCore >= 11.3.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.9",
       "Microsoft.AspNetCore.OpenApi >= 10.0.9",
@@ -3721,7 +3795,17 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Application\\Crm.Application.csproj": {
+              "projectPath": "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Application\\Crm.Application.csproj"
+            },
+            "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Infrastructure\\Crm.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Infrastructure\\Crm.Infrastructure.csproj"
+            },
+            "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Persistence\\Crm.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Persistence\\Crm.Persistence.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

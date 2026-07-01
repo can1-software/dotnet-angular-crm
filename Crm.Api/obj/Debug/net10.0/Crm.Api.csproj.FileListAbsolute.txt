@@ -172,3 +172,11 @@ C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\runtimes\win-arm64\nativ
 C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Can\Desktop\atos\crm\Crm.Api\obj\Debug\net10.0\Crm.Api.sourcelink.json
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Application.dll
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Domain.dll
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Infrastructure.dll
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Persistence.dll
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Application.pdb
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Infrastructure.pdb
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Persistence.pdb
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Domain.pdb
