@@ -1,4 +1,6 @@
+using Crm.Application.Interfaces;
 using Crm.Persistence.Context;
+using Crm.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +15,9 @@ public static class DependencyInjection
     {
         services.AddDbContext<CrmDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }
