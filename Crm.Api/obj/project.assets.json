@@ -1348,7 +1348,9 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Crm.Application": "1.0.0",
-          "Crm.Domain": "1.0.0"
+          "Crm.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "10.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.9"
         },
         "compile": {
           "bin/placeholder/Crm.Persistence.dll": {}
