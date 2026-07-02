@@ -1,5 +1,6 @@
 using Crm.Api.Middlewares;
 using Crm.Application;
+using Crm.Infrastructure;
 using Crm.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddPersistence(builder.Configuration);
 
 var app = builder.Build();
