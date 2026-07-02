@@ -1,9 +1,11 @@
 using Crm.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crm.Persistence.Context;
 
-public class CrmDbContext : DbContext
+public class CrmDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
 {
     public CrmDbContext(DbContextOptions<CrmDbContext> options) : base(options)
     {
@@ -13,7 +15,7 @@ public class CrmDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(CrmDbContext).Assembly);
         base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(CrmDbContext).Assembly);
     }
 }
