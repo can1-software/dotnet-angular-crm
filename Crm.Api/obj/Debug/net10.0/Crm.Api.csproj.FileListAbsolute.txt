@@ -181,3 +181,6 @@ C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Infrastructure.pdb
 C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Persistence.pdb
 C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Crm.Domain.pdb
 C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Can\Desktop\atos\crm\Crm.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll

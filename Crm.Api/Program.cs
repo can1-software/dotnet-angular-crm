@@ -8,7 +8,6 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,20 +30,11 @@ builder.Services.AddSwaggerGen(options =>
         Description = "JWT Authorization header using the Bearer scheme."
     });
 
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
+    options.AddSecurityRequirement(document =>
+        new OpenApiSecurityRequirement
         {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            Array.Empty<string>()
-        }
-    });
+            [new OpenApiSecuritySchemeReference("Bearer", document)] = new List<string>()
+        });
 });
 builder.Services.AddOpenApi(options =>
 {

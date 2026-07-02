@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3W4oP0vnQmg=",
+  "dgSpecHash": "GKWck24ceFg=",
   "success": true,
   "projectFilePath": "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Api\\Crm.Api.csproj",
   "expectedPackageFiles": [
@@ -75,18 +75,6 @@
     "C:\\Users\\Can\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.4\\system.security.cryptography.protecteddata.9.0.4.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "message": "Crm.Api, Swashbuckle.AspNetCore (>= 9.0.7) öğesine bağlı ancak Swashbuckle.AspNetCore 9.0.7 bulunamadı. Bunun yerine Swashbuckle.AspNetCore 10.0.0 çözümlendi.",
-      "projectPath": "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Api\\Crm.Api.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Can\\Desktop\\atos\\crm\\Crm.Api\\Crm.Api.csproj",
-      "libraryId": "Swashbuckle.AspNetCore",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
     {
       "code": "NU1903",
       "level": "Warning",
