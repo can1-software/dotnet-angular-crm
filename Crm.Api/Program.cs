@@ -1,3 +1,4 @@
+using Crm.Api.Middlewares;
 using Crm.Application;
 using Crm.Persistence;
 
@@ -11,6 +12,8 @@ builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseGlobalExceptionMiddleware();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
