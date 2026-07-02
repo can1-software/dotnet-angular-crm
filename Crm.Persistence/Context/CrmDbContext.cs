@@ -12,6 +12,7 @@ public class CrmDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
     }
 
     public DbSet<Company> Companies => Set<Company>();
+    public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

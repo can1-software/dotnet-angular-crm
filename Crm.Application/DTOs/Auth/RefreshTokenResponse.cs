@@ -1,6 +1,6 @@
 namespace Crm.Application.DTOs.Auth;
 
-public class LoginResponse
+public class RefreshTokenResponse
 {
     public string AccessToken { get; set; } = string.Empty;
     public DateTime ExpiresAt { get; set; }
