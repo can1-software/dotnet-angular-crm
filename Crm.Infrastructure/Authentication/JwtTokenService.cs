@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Crm.Application.DTOs.Auth;
 using Crm.Application.Interfaces;
 using Crm.Domain.Entities;
 using Microsoft.Extensions.Options;
@@ -17,7 +18,7 @@ public class JwtTokenService : IJwtTokenService
         _jwtSettings = jwtSettings.Value;
     }
 
-    public string GenerateAccessToken(AppUser user, IList<string> roles)
+    public AccessTokenResult GenerateAccessToken(AppUser user, IList<string> roles)
     {
         var claims = new List<Claim>
         {
@@ -34,14 +35,19 @@ public class JwtTokenService : IJwtTokenService
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        var expiresAt = DateTime.UtcNow.AddMinutes(_jwtSettings.AccessTokenExpirationMinutes);
 
         var token = new JwtSecurityToken(
             issuer: _jwtSettings.Issuer,
             audience: _jwtSettings.Audience,
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(_jwtSettings.AccessTokenExpirationMinutes),
+            expires: expiresAt,
             signingCredentials: credentials);
 
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        return new AccessTokenResult
+        {
+            AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
+            ExpiresAt = expiresAt
+        };
     }
 }

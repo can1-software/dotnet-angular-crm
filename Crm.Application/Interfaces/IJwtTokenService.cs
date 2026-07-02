@@ -1,8 +1,9 @@
+using Crm.Application.DTOs.Auth;
 using Crm.Domain.Entities;
 
 namespace Crm.Application.Interfaces;
 
 public interface IJwtTokenService
 {
-    string GenerateAccessToken(AppUser user, IList<string> roles);
+    AccessTokenResult GenerateAccessToken(AppUser user, IList<string> roles);
 }

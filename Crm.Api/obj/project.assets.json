@@ -1353,6 +1353,7 @@
         "dependencies": {
           "Crm.Application": "1.0.0",
           "Crm.Domain": "1.0.0",
+          "Crm.Persistence": "1.0.0",
           "Microsoft.IdentityModel.Tokens": "8.14.0",
           "System.IdentityModel.Tokens.Jwt": "8.14.0"
         },
@@ -1361,7 +1362,10 @@
         },
         "runtime": {
           "bin/placeholder/Crm.Infrastructure.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Crm.Persistence/1.0.0": {
         "type": "project",
